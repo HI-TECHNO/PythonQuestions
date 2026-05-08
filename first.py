@@ -59,7 +59,7 @@ while num>0:
 	count+=1
 	num = num//10
 else:
-	print("\nThreshold Not Reached")
+	print("\nThreshold Not Reached.")
 	
 
 print("Sum: ",sum)
