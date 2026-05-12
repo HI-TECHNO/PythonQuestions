@@ -1,4 +1,4 @@
-1. Smart Credit Card Approval System
+'''1. Smart Credit Card Approval System
 
 A bank evaluates credit card applications based on income, credit score, employment type, and existing debt.
 
@@ -13,9 +13,38 @@ Employment = private
 Debt = 10000
 
 Output:
-Card Type = Silver Card
+Card Type = Silver Card'''
 
-2. Hospital Emergency Priority System
+income = float(input("Income = "))
+score = int(input("Credit Score = "))
+employment = input("Employment = ").lower()
+dept = input("Dept = ")
+
+if income>=50000:
+   if score>=750:
+      if dept<20000:
+          print("Card Type = Premium Card")
+      else:
+          print("Card Type = Gold Card")
+   else:
+       if employment=="goverment":
+           if score>=650:
+              print("Card Type = Gold Card")
+           else:
+              print("Rejected!")
+       else:
+           pass
+else:
+    if income>=30000:
+       if score>=700:
+          print("Card Type = Silver Card")
+       else:
+          print("Rejected!")
+    else:
+          print("Rejected!")
+
+
+'''2. Hospital Emergency Priority System
 
 A hospital assigns treatment priority based on age, severity, and insurance.
 
@@ -31,9 +60,33 @@ Severity = critical
 Insurance = yes
 
 Output:
-Treatment = Immediate ICU
+Treatment = Immediate ICU'''
 
-3. Smart Scholarship Allocation System
+
+age = int(input("Age = "))
+severity =  input("Severity = ").lower()
+insurance = input("Insurance (yes/no) = ").lower()
+
+
+if severity=="critical":
+   if age>=60:
+      print("Treatment = Immediate ICU")
+   else:
+      print("Treatment = Emergency Ward")
+elif severity=="moderate":
+   if insurance=="yes":
+      print("Treatment = Priority Treatment")
+   else:
+      print("Treatment = General Queue")
+else:
+   if age<=10:
+      print("Treatment = Pediatric Priority")
+   else:
+      print("Treatment = Wait...")
+
+
+
+'''3. Smart Scholarship Allocation System
 
 A scholarship is provided based on marks, family income, and category.
 
@@ -49,9 +102,31 @@ Income = 250000
 Category = OBC
 
 Output:
-Scholarship = Full Scholarship
+Scholarship = Full Scholarship'''
 
-4. Airline Ticket Pricing Engine
+
+marks = int(input("Marks = "))
+income = float(input("Income = "))
+category = input("Category = ").lower()
+
+if marks>=85:
+   if income<=300000:
+      if category!="general":
+         print("Scholarship = Full Scholarship")
+      else:
+         print("Scholarship = 75% Scholarship")
+   else:
+         print("Scholarship = 50% Scholarship")
+elif marks<70:
+     if income<=200000:
+         print("Scholarship = 50% Scholarship")
+     else:
+         print("Scholarship = 25% Scholarship")
+else:
+         print("Scholarship = No Scholarship")
+
+
+'''5. Airline Ticket Pricing Engine
 
 An airline calculates ticket price based on class, distance, and booking time.
 
@@ -65,9 +140,29 @@ Distance = 1200
 Booking = early
 
 Output:
-Ticket Price = 4000
+Ticket Price = 4000'''
 
-5. Smart Exam Evaluation System
+p_class = input("Class = ")
+distance = float(input("Distance = "))
+booking_time =  input("Booking = ").lower()
+
+if p_class=="business":
+   if distance>=1000:
+      print("Ticket Price = 8000")
+   else:
+      print("Ticket Price = 5000")
+else:
+   if distance>1000:
+      if booking_time=="early":
+        print("Ticket Price = 4000")
+      else:
+        print("Ticket Price = 5000")
+   else:
+        print("Ticket Price = 2500")
+
+
+
+'''5. Smart Exam Evaluation System
 
 A student’s result depends on marks, attendance, and internal score.
 
@@ -81,9 +176,32 @@ Attendance = 80
 Internal = 26
 
 Output:
-Result = Reappear
+Result = Reappear'''
 
-6. Banking Fraud Detection System
+
+
+marks = int(input("Marks = "))
+attendance = int(input("Attendance = "))
+internal = int(input("Internal = "))
+
+if marks>=40:
+   if attendance>=75:
+      if internal>=20:
+        print("Result = Pass")
+      else:
+        print("Result = Grace Pass")
+   else:
+        print("Result =  Detained")
+else:
+  if marks>=35:
+    if internal>=25:
+       print("Result = Reapper")
+    else:
+        print("Result = Fail")
+
+
+
+'''6. Banking Fraud Detection System
 
 A bank checks fraud risk based on transaction amount, location, device, and transaction count.
 
@@ -100,9 +218,42 @@ Device = new
 Transactions = 4
 
 Output:
-Risk Level = High Risk (Blocked)
+Risk Level = High Risk (Blocked)'''
 
-7. University Result Classification System
+
+amount = int(input("Amount = "))
+location = input("Location = ").lower()
+device = input("Device = ").lower()
+transactions = int(input("Transactions = "))
+
+if amount>50000:
+  if location=="international":
+    if device=="new":
+      if transactions>3:
+        print("Risk Level = High Risk (Blocked)")
+      else:
+        print("Risk Level = Medium Risk")
+    else:
+      print("Risk Level = Medium Risk")
+  else:
+     if location=="domestic":
+       if transactions>5:
+         print("Risk Level = Medium Risk")
+       else:
+         print("Risk Level = Low Risk")
+else:
+    unusual_activity= input("Unusual Activity (yes/no) = ")
+    if unusual_activity=="yes":
+      if device=="new":
+        print("Risk Level = Medium Risk")
+      else:
+        print("Risk Level = Low Risk")
+    else:
+        print("Risk Level = Safe")
+
+
+
+'''7. University Result Classification System
 
 A university assigns final class based on marks, backlog, and project score.
 
@@ -118,9 +269,34 @@ Backlogs = 0
 Project = 85
 
 Output:
-Result = First Class with Distinction
+Result = First Class with Distinction'''
 
-8. E-Commerce Dynamic Pricing System
+
+marks = int(input("Marks = "))
+backlog = int(input("Backlogs = "))
+project = int(input("Project = "))
+
+
+if marks>=75:
+   if backlog==0:
+     if project>=80:
+       print("Result = First Class with Distinction")
+     else:
+       print("Result = First Class ")
+   else:
+       print("Result = First Class ")
+elif marks>=60:
+   if backlog<=2:
+       print("Result = Second Class")
+   else:
+       print("Result = Pass Class")
+else:
+   if marks>=50:
+      print("Result = Pass")
+   else:
+      print("Result = Fail")
+
+'''8. E-Commerce Dynamic Pricing System
 
 An e-commerce system gives discount based on demand, stock, user type, and festival.
 
@@ -137,9 +313,38 @@ User Type = premium
 Festival = yes
 
 Output:
-Discount = 20%
+Discount = 20%'''
 
-9. Smart Loan Eligibility System
+
+demand = int(input("Demand = "))
+stock = int(input("Stock = "))
+user_type = input("User Type (premium?) = ").lower()
+festival = input("Festival (yes/no) = ").lower()
+
+
+if demand>=80:
+   if stock<50:
+     if user_type=="premium":
+        if festival=="yes":
+          print("Discount = 20%")
+        else:
+          print("Discount = 10%")
+     else:
+        print("No Discount")
+   else:
+      print("Discount = 5%")
+elif demand>=40:
+  if festival=="yes":
+    print("Discount = 10%")
+  else:
+    print("No Discount ")
+else:
+  if stock>200:
+    print("Discount = 15%")
+  else:
+    print("No Discount ")
+
+'''9. Smart Loan Eligibility System
 
 A bank approves loans based on salary, age, credit score, and EMI.
 
@@ -151,12 +356,33 @@ Input:
 Salary = 50000
 Age = 30
 Credit Score = 760
-EMI = 18000
+EMI = 18000'''
 
-Output:
-Loan Status = Approved at 8%
+salary = float(input("Salary = "))
+age = int(input("Age = "))
+score = int(input("Credit Score = "))
+emi = float(input("EMI = "))
 
-10. Military Recruitment Fitness System
+if salary>=40000:
+   if age>=21 and age<=60:
+     if score>=750:
+       if emi<=salary*40/100:
+          print("Loan Status = Approved at 8%")
+       else:
+          print("Loan Status = Approved at 10%")
+     else:
+         if score>=650:
+           print("Loan Status = Approved at 12%")
+         else:
+           print("Loan Status = Rejected")
+else:
+   if salary>=25000 and score>=700:
+     print("Loan Status = Approved at 13%")
+   else:
+     print("Loan Status = Rejected")
+
+
+'''10. Military Recruitment Fitness System
 
 Selection is based on age, BMI, running time, and medical condition.
 
@@ -173,4 +399,28 @@ Running Time = 14
 Medical = fit
 
 Output:
-Selection Status = Selected
+Selection Status = Selected'''
+
+
+age = int(input("Age = "))
+bmi = float(input("BMI = "))
+time = float(input("Running Time = "))
+medical = input("Medical (fit?) = ")
+
+if age>=18  and age<=25:
+  if bmi>=18 and bmi<=25:
+    if time<=15:
+      if medical=="fit":
+         print("Selection Status = Selected")
+      else:
+         print("Selection Status = Medical Fail")
+    else:
+       print("Selection Status = Physical Fail")
+  else:
+     print("Selection Status = BMI Fail")
+else:
+ if age>=26 and age<=30:
+  if time<=14 and medical=="fit":
+    print("Selection Status = Conditional Selection")
+  else:
+    print("Selection Status = Rejected")
